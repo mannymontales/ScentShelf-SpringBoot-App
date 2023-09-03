@@ -26,8 +26,7 @@ public class Fragrance implements Serializable {
      * From a database point of view, this is very efficient because the auto-increment columns are highly optimized, and it doesn’t require any additional statements.
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "sequenceGenerator" )
-    @SequenceGenerator(name = "sequenceGenerator")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "fragrance_id")
     private Long id; //fragrance id
 
