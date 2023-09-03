@@ -1,27 +1,29 @@
 package com.example.ScentShelf.services;
 
 import com.example.ScentShelf.models.Fragrance;
+import com.example.ScentShelf.models.Note;
 import com.example.ScentShelf.repositories.FragranceRepository;
+import com.example.ScentShelf.repositories.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class FragranceService {
-    private final FragranceRepository repository;
+public class NoteService {
+
+    private final NoteRepository repository;
 
     @Autowired
-    public FragranceService(FragranceRepository repository) {
+    public NoteService(NoteRepository repository) {
         this.repository = repository;
     }
 
-    public List<Fragrance> getAllEntities() {
+    public List<Note> getAllEntities() {
         return repository.findAll();
     }
 
-    public Fragrance get(Long id) {
+    public Note get(Long id) {
         return repository.findById(id).get();
     }
-
 }

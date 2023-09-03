@@ -14,10 +14,8 @@ import java.io.Serializable;
 @Getter
 @Setter
 @NoArgsConstructor // <--- THIS is it
-@Table(name = "Fragrance")
+@Table(name = "fragrance")
 public class Fragrance implements Serializable {
-
-    //private static final long serialVersionUID = 1L;
 
     /**
      * https://www.javaguides.net/2018/12/hibernatejpa-primary-key-generation-stratergies.html
@@ -25,10 +23,11 @@ public class Fragrance implements Serializable {
      * It relies on an auto-incremented database column and lets the database generate a new value with each insert operation.
      * From a database point of view, this is very efficient because the auto-increment columns are highly optimized, and it doesn’t require any additional statements.
      */
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "fragrance_id")
-    private Long id; //fragrance id
+    private Long id;
 
     @NotNull
     @Column(name = "name", nullable = false)
